@@ -1,0 +1,55 @@
+1.registe a new user 
+	route: '/user/registe' 
+	request json: {u"username":u"",u"pswd":u"",u"tel":u""} 
+	reply json: {u"message":u"success",u"detail":{u"username":u"",u"uuid":0}} 
+		{u"message":u"faild",u"detail":"ERROR MESSA"} 
+2.user login 
+	route: '/user/login' 
+	request json: {u"username":u"",u"pswd":u""} 
+	reply json: {u"message":u"success",u"detail":{u"username":u"",u"uuid":0,u"token":0}} 
+		{u"message":u"faild",u"detail":"ERROR MESSA"} 
+3.get user profile 
+	route: '/user/getprofile' 
+	request json: {u"uuid":0,u"token":0} 
+	reply json: {u"message":u"success",u"detail":{u"username":u"",u"uuid":0,u"tel":u""}} 
+		{u"message":u"faild",u"detail":"ERROR MESSA"} 
+4.change user password with old password 
+	route: '/user/changepswd' 
+	request json: {u"uuid":0,u"token":0,u"oldpswd":"",u"newpswd":0} 
+	reply json: {u"message":u"success",u"detail":""} 
+		{u"message":u"faild",u"detail":"ERROR MESSA"} 
+5.find user's password with phone message check number 
+	route: '/user/findpswd' 
+	request json: {u"uuid":0,u"token":0,u"tel":u""} 
+	reply json: {u"message":u"success",u"detail":""} 
+		{u"message":u"faild",u"detail":"ERROR MESSA"} 
+6.reset user password with check number 
+	route: '/user/resetpswd' 
+	request json: {u"uuid":0,u"token":0,u"tel":u"",u"checknumber":u"",u"newpswd":u""} 
+	reply json: {u"message":u"success",u"detail":} 
+		{u"message":u"faild",u"detail":"ERROR MESSA"} 
+7.get user devices 
+	route: '/user/getdevices' 
+	request json: {u"uuid":0,u"token":0,u"devicetype":u"",u"devicename":u""} 
+	reply json: {u"message":u"success",u"detail":{"devices": [ 
+        { 
+            "deviceType":"SMARTPLUGv1" , 
+            "image": "SMARTPLUGv1.png", 
+            "mqttBroker":"aliyun", 
+            "productKey": "yK6RNFrGRJl", 
+            "deviceName": "5CCF7FEF63AA", 
+            "customName": "会长用的插座", 
+            "showSwitch":true 
+        }, 
+        ...]}} 
+        {u"message":u"faild",u"detail":"ERROR MESSA"} 
+8.add a new device 
+	route: '/device/add' 
+	request json: {u"uuid":0,u"token":0,u"devicetype":u"",u"devicename":u""} 
+	reply json: {u"message":u"success",u"detail":""} 
+		{u"message":u"faild",u"detail":"ERROR MESSA"} 
+9.delete a device 
+	route: '/device/del' 
+	request json: {u"uuid":0,u"token":0,u"devicetype":u"",u"devicename":u""} 
+	reply json: {u"message":u"success",u"detail":""} 
+		{u"message":u"faild",u"detail":"ERROR MESSA"} 
